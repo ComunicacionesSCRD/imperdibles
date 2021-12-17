@@ -1,0 +1,941 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+<head>
+    <meta charset="utf-8"> <!-- utf-8 works for most cases -->
+    <meta name="viewport" content="width=device-width"> <!-- Forcing initial-scale shouldn't be necessary -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"> <!-- Use the latest (edge) version of IE rendering engine -->
+    <meta name="x-apple-disable-message-reformatting">  <!-- Disable auto-scale in iOS 10 Mail entirely -->
+    <title></title> <!-- The title tag shows in email notifications, like Android 4.4. -->
+
+    <link href="https://fonts.googleapis.com/css?family=Work+Sans:200,300,400,500,600,700" rel="stylesheet">
+
+    <!-- CSS Reset : BEGIN -->
+    <style>
+
+        /* What it does: Remove spaces around the email design added by some email clients. */
+        /* Beware: It can remove the padding / margin and add a background color to the compose a reply window. */
+        html,
+body {
+    margin: 0 auto !important;
+    padding: 0 !important;
+    height: 100% !important;
+    width: 100% !important;
+    background: #f1f1f1;
+}
+
+/* What it does: Stops email clients resizing small text. */
+* {
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+}
+
+/* What it does: Centers email on Android 4.4 */
+div[style*="margin: 16px 0"] {
+    margin: 0 !important;
+}
+
+/* What it does: Stops Outlook from adding extra spacing to tables. */
+table,
+td {
+    mso-table-lspace: 0pt !important;
+    mso-table-rspace: 0pt !important;
+}
+
+/* What it does: Fixes webkit padding issue. */
+table {
+    border-spacing: 0 !important;
+    border-collapse: collapse !important;
+    table-layout: fixed !important;
+    margin: 0 auto !important;
+}
+
+/* What it does: Uses a better rendering method when resizing images in IE. */
+img {
+    -ms-interpolation-mode:bicubic;
+}
+
+/* What it does: Prevents Windows 10 Mail from underlining links despite inline CSS. Styles for underlined links should be inline. */
+a {
+    text-decoration: none;
+}
+
+/* What it does: A work-around for email clients meddling in triggered links. */
+*[x-apple-data-detectors],  /* iOS */
+.unstyle-auto-detected-links *,
+.aBn {
+    border-bottom: 0 !important;
+    cursor: default !important;
+    color: inherit !important;
+    text-decoration: none !important;
+    font-size: inherit !important;
+    font-family: inherit !important;
+    font-weight: inherit !important;
+    line-height: inherit !important;
+}
+
+/* What it does: Prevents Gmail from displaying a download button on large, non-linked images. */
+.a6S {
+    display: none !important;
+    opacity: 0.01 !important;
+}
+
+/* What it does: Prevents Gmail from changing the text color in conversation threads. */
+.im {
+    color: inherit !important;
+}
+
+/* If the above doesn't work, add a .g-img class to any image in question. */
+img.g-img + div {
+    display: none !important;
+}
+
+/* What it does: Removes right gutter in Gmail iOS app: https://github.com/TedGoas/Cerberus/issues/89  */
+/* Create one of these media queries for each additional viewport size you'd like to fix */
+
+/* iPhone 4, 4S, 5, 5S, 5C, and 5SE */
+@media only screen and (min-device-width: 320px) and (max-device-width: 374px) {
+    u ~ div .email-container {
+        min-width: 320px !important;
+    }
+}
+/* iPhone 6, 6S, 7, 8, and X */
+@media only screen and (min-device-width: 375px) and (max-device-width: 413px) {
+    u ~ div .email-container {
+        min-width: 375px !important;
+    }
+}
+/* iPhone 6+, 7+, and 8+ */
+@media only screen and (min-device-width: 414px) {
+    u ~ div .email-container {
+        min-width: 414px !important;
+    }
+}
+
+
+    </style>
+
+    <!-- CSS Reset : END -->
+
+    <!-- Progressive Enhancements : BEGIN -->
+    <style>
+
+	    .primary{
+	background: #e8b43e;
+}
+.bg_white{
+	background: #ffffff;
+}
+.bg_light{
+	background: #fafafa;
+}
+.bg_black{
+	background: #5d4294;
+}
+.bg_dark{
+	background: rgba(27,11,58,.8);
+}
+.email-section{
+	padding:1.5em;
+}
+
+/*BUTTON*/
+.btn{
+	padding: 5px 15px;
+	display: inline-block;
+}
+.btn.btn-primary{
+	border-radius: 30px;
+	background: #5d4294;
+	color: #ffffff;
+}
+.btn.btn-white{
+	border-radius: 30px;
+	background: #ffffff;
+	color: #000000;
+}
+.btn.btn-white-outline{
+	border-radius: 30px;
+	background: transparent;
+	border: 1px solid #fff;
+	color: #fff;
+}
+
+h1,h2,h3,h4,h5,h6{
+	font-family: 'Work Sans', sans-serif;
+	margin-top: 0;
+	font-weight: normal;
+	color: rgba(255,255,255,.9);
+}
+
+body{
+	font-family: 'Work Sans', sans-serif;
+	font-weight: 400;
+	font-size: 15px;
+	line-height: 1.4;
+	color: rgba(255,255,255,.8);
+}
+
+a{
+	color: #5d4294;
+}
+
+table{
+}
+/*LOGO*/
+
+.logo{
+	margin: 0;
+	display: inline-block;
+	position: absolute;
+	top: 10px;
+	left: 0;
+	right: 0;
+	margin-bottom: 0;
+}
+
+.logo a{
+	color: #fff;
+	font-size: 24px;
+	font-weight: 700;
+	text-transform: uppercase;
+	font-family: 'Work Sans', sans-serif;
+	display: inline-block;
+	border: 2px solid #fff;
+	line-height: 1.3;
+	padding: 10px 15px 4px 15px;
+	margin: 0;
+}
+.logo h1 a span{
+	line-height: 1;
+}
+
+.navigation{
+	padding: 0;
+}
+.navigation li{
+	list-style: none;
+	display: inline-block;;
+	margin-left: 5px;
+	font-size: 13px;
+	font-weight: 500;
+}
+.navigation li a{
+	color: rgba(0,0,0,.4);
+}
+
+/*HERO*/
+.hero{
+	position: relative;
+	z-index: 0;
+}
+
+.hero .overlay{
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	content: '';
+	width: 100%;
+	background: #000;
+	z-index: -1;
+	opacity: .3;
+}
+
+.hero .text{
+	color: rgba(255,255,255,.9);
+}
+.hero .text h2{
+	color: #fff;
+	font-size: 40px;
+	margin-bottom: 20px;
+	font-weight: 300;
+	line-height: 1.3;
+	/*text-transform: uppercase;*/
+}
+.hero .text .icon{
+	position: absolute;
+	bottom: -30px;
+	left: 0;
+	right: 0;
+}
+
+
+/*HEADING SECTION*/
+.heading-section{
+}
+.heading-section h2{
+	color: rgba(255,255,255,.9);
+	font-size: 28px;
+	margin-top: 0;
+	line-height: 1.4;
+	font-weight: 400;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+}
+.heading-section .subheading{
+	margin-bottom: 20px !important;
+	display: inline-block;
+	font-size: 13px;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	color: rgba(255,255,255,.4);
+	position: relative;
+}
+.heading-section .subheading::after{
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: -5px;
+	content: '';
+	width: 100%;
+	height: 2px;
+	background: #e8b43e;
+	margin: 0 auto;
+}
+.heading-section .subheading::before{
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: -10px;
+	content: '';
+	width: 70%;
+	height: 2px;
+	background: #e8b43e;
+	margin: 0 auto;
+}
+
+.heading-section-white{
+	color: rgba(255,255,255,.8);
+}
+.heading-section-white h2{
+	font-family: 
+	line-height: 1;
+	padding-bottom: 0;
+}
+.heading-section-white h2{
+	color: #ffffff;
+}
+.heading-section-white .subheading{
+	margin-bottom: 0;
+	display: inline-block;
+	font-size: 13px;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	color: rgba(255,255,255,.4);
+}
+
+
+/*TRAINER*/
+.trainer{
+
+}
+.trainer h2{
+	margin-bottom: 5px;
+}
+.trainer span{
+	text-transform: uppercase;
+	color: rgba(255,255,255,.8);
+}
+
+/*PROGRAM*/
+.text-program .price{
+	font-size: 20px;
+	margin-bottom: 0;
+	color: #e8b43e;
+}
+.text-program h2{
+	font-size: 18px;
+	margin-bottom: 10px;
+	font-weight: 500;
+}
+.text-program p{
+	margin-top: 0;
+}
+
+/*FOOTER*/
+
+.footer{
+	color: rgba(255,255,255,.5);
+
+}
+.footer .heading{
+	color: #ffffff;
+	font-size: 20px;
+}
+.footer ul{
+	margin: 0;
+	padding: 0;
+}
+.footer ul li{
+	list-style: none;
+	margin-bottom: 10px;
+}
+.footer ul li a{
+	color: rgba(255,255,255,1);
+}
+
+
+@media screen and (max-width: 500px) {
+
+
+}
+
+
+    </style>
+
+
+</head>
+
+<body width="100%" style="margin: 0; padding: 0 !important; mso-line-height-rule: exactly; background-color: #222222;">
+	<center style="width: 100%; background-color: #f1f1f1;">
+    <div style="display: none; font-size: 1px;max-height: 0px; max-width: 0px; opacity: 0; overflow: hidden; mso-hide: all; font-family: sans-serif;">
+      &zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;
+    </div>
+    <div style="max-width: 600px; margin: 0 auto;" class="email-container">
+    	<!-- BEGIN BODY -->
+      <table align="center" role="presentation" cellspacing="0" cellpadding="0" border="0" width="600px" style="margin: auto;">
+	      <tr>
+          <td><a href="https://www.culturarecreacionydeporte.gov.co/"><img src="http://scrd.gov.co/cultura/imperdibles_cabezote.jpg" alt="" style="width: 100%; max-width: 600px; height: auto; margin: auto; display: block;"></a></td>
+			  
+	      </tr><!-- end tr -->
+	      <tr>
+          <td class="bg_black email-section" style="text-align:center; padding-top: 1em; padding-bottom: 0em; background-color: #5d4294;">
+          	<div class="heading-section heading-section-white">
+          		<span class="subheading"><font color="white">Del 17 AL 23 DE DICIEMBRE&nbsp;</font></span>
+                <p>Festival Es Cultura Local, carrera de observación, conciertos con la Filarmónica, teatro, cumpleaños del Castillo de las Artes, Capital Games, programación en Eureka, y muchas actividades imperdibles. 
+					<p>Recuerda que para asistir a eventos debes presentar tu carné de vacunación de COVID-19.</p></strong><br>
+                </p>
+            	<p><font color="white" size="+2">EN ESCENA</font></p>            	
+          	</div>
+          </td>
+        </tr><!-- end: tr -->
+        <tr>
+          <td class="bg_dark" style="width: 100%;">
+			  
+			   <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+          		<tr>
+          			<td valign="middle" width="50%" bgcolor="#e8b43e">
+                  <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                    <tr>
+                      <td><a href="https://www.culturarecreacionydeporte.gov.co/es/economia-estudios-y-politica/llega-el-festival-es-cultura-local-al-bronx-y-gran-estacion-natmon"><img src="Fotos editadas/1.fuga16122021" alt="" style="width: 100%; max-width: 600px; height: auto; margin: auto; display: block;"></a>
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+                <td valign="middle" width="50%" bgcolor=#e8b43e>
+                  <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                    <tr>
+                      <td class="trainer" style="text-align: left; padding:25px;">
+					    <p><font color="#5d4294" size="4px">Festival Es Cultura Local</font></p>
+		          
+				              <p><font color="white">En el Bronx Distrito Creativo y en la Plazoleta de los Alfiles del centro comercial Gran Estación los emprendedores de las localidades de Los Mártires, Santa Fe y La Candelaria compartirán escenario con cantantes, artistas y actores.</font></p>
+				  	    <p><a href="https://www.culturarecreacionydeporte.gov.co/es/economia-estudios-y-politica/llega-el-festival-es-cultura-local-al-bronx-y-gran-estacion-natmon" style="color:white" class="btn btn-primary">17, 18 y 19 de diciembre </a></p>
+						  	  <p><br>
+			  	      </p></td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+          	</table>
+			  
+			  
+          	
+			  
+			  
+			  
+			  
+			  <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+          		<tr>
+          			<td valign="middle" width="50%">
+                  <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                    <tr>
+						<td valign="middle" width="50%" bgcolor="#e8b43e">
+                  <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                    <tr>
+                      <td class="trainer" style="text-align: left; padding:30px;">
+						  <p><font color="#5d4294" size="4px">Navidad Móvil</font></p>
+				      
+						  
+			              	<p><font color="white">Disfruta de una franja que se suma a la celebración de esta festividad para llevar diversas propuestas artísticas a Kennedy, Fontibón, Bosa, Tunjuelito, Rafael Uribe Uribe y Los Mártires. 
+						    </font> </p>
+						  
+						   <p><a href="https://www.idartes.gov.co/es/noticias/la-navidad-se-celebra-con-musica-y-teatro-en-bogota" style="color:white" class="btn btn-primary">14 al 21 de diciembre</a></p>
+				              	
+                      </td>
+                     
+                    </tr>
+                  </table>
+                </td>
+                
+					 <td bgcolor="#e8b43e"><a href="https://www.idartes.gov.co/es/noticias/la-navidad-se-celebra-con-musica-y-teatro-en-bogota"><img src="Fotos editadas/2.idartes16122021" alt="" style="width: 100%; max-width: 600px; height: auto; margin: auto; display: block;"></a>
+                      </td>
+					
+					
+					
+					
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+          	</table>
+			  
+			 
+			  
+			  
+			  
+			  
+		<table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+          		<tr>
+          			<td valign="middle" width="50%" bgcolor="#e8b43e">
+                  <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                    <tr>
+                      <td><a href="https://idrd.gov.co/es/node/1336"><img src="Fotos editadas/3.idrd16122021" alt="" style="width: 100%; max-width: 600px; height: auto; margin: auto; display: block; "></a>
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+                <td valign="middle" width="50%" bgcolor=#e8b43e>
+                  <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                    <tr>
+                      <td class="trainer" style="text-align: left; padding:25px; background-color:#e8b43e">
+						  <p><font color="#5d4294" size="4px">Llegan los Capital Games, primer torneo de Fitness funcional</font></p>
+				              	
+				              	<p><font color="white"> Asiste a este gran espectáculo en el cual se pondrán a prueba todas las capacidades físicas, como nunca antes se ha visto, en el Palacio de Los Deportes y el parque de Los Novios.</p>
+				              	<p><a href="https://idrd.gov.co/es/node/1336" style="color:white" class="btn btn-primary">18 de diciembre</a></p>
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+          	</table>
+			  
+			  
+			  
+			  
+			  
+			  
+			  
+			  
+			  
+          </td>
+        </tr><!-- end: tr -->
+        
+		  
+		  
+		  <tr>
+          <td class="bg_black" style="text-align:center; padding: 2.5em 0 0 0;background-color: #5d4294;">
+          	<div class="heading-section heading-section-white">
+          		<span class="subheading"><font color="white">ORQUESTA FILARMÓNICA DE BOGOTÁ</font></span>
+            	<p><font color="white" size="+2">OFB</font></p>
+          	</div>
+          	<table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+          		<tr>
+                <td width="50%">
+                  <div class="project-entry"> <a href="https://www.teatromayor.org/es/evento/musica/tosca-de-giacomo-puccini-italia-y-libreto-en-italiano-de-luigi-illica-y-giuseppe-giacosa-4170?function=2307"><img src="Fotos editadas/4.ofb16122021" alt="" style="width: 100%; max-width: 300px; height: auto; margin: auto; display: block;"></a>
+                  </div>
+                </td>
+                <td width="50%">
+                  <div class="project-entry"> <a href="https://www.teatromayor.org/es/evento/musica/tosca-de-giacomo-puccini-italia-y-libreto-en-italiano-de-luigi-illica-y-giuseppe-giacosa-4170?function=2307"><img src="Fotos editadas/4a.ofb16122021" alt="" style="width: 100%; max-width: 300px; height: auto; margin: auto; display: block;"></a>
+                  </div>
+                </td>
+              </tr>
+          	</table>
+          	<table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+          		<tr>
+                <td width="50%">
+                  <div class="project-entry"> <a href="https://filarmonicabogota.gov.co/eventos/suena-la-musica-en-la-localidad-de-bosa/?occurrence=2021-12-19"><img src="Fotos editadas/5.ofb16122021" alt="" style="width: 100%; max-width: 300px; height: auto; margin: auto; display: block;"></a>
+                  </div>
+                </td>
+                <td width="50%">
+                  <div class="project-entry"> <a href="https://filarmonicabogota.gov.co/eventos/suena-la-musica-en-la-localidad-de-bosa/?occurrence=2021-12-19"><img src="Fotos editadas/5a.ofb16122021" alt="" style="width: 100%; max-width: 300px; height: auto; margin: auto; display: block;"></a>
+                  </div>
+                </td>
+              </tr>
+          	</table>
+          </td>
+        </tr><!-- end: tr -->
+	     
+		  
+		  <tr>
+	        <td class="bg_dark email-section" style= "background-color: #46395e">
+	        	<div class="heading-section" style="text-align: center;  padding: 2.5em 0 0 0;">
+	        		<span class="subheading"><font color="white">PARTICIPA</font></span>
+	          	<p><font color="white" size="+2">TODOS SOMOS CREADORES</font></p>
+	        	</div>
+	        	<table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+	        		
+					
+					<tr>
+          			<td style="padding-bottom: 30px;">
+          				<table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+          					            <td valign="middle" width="50%"><a href="https://www.idartes.gov.co/es/agenda/lanzamiento/aniversario-el-castillo-de-las-artes"><img src="Fotos editadas/6.idartes16122021" alt="" style="width: 100%; max-width: 600px; height: auto; margin: auto; display: block;"></a>
+		                              </td>
+		                <td valign="middle" width="50%">
+		                  <div class="text-program" style="text-align: left; padding-left:25px;">
+		                  	<span class="price"><font color="#e8b43e">Aniversario El Castillo de las Artes 	</font></span>
+				           
+			              	<p><font color="white">Celebra con la feria de arte y memoria, exposiciones de fotografía y dibujo, varios performances, laboratorios de creación, voguing, mapping y el lanzamiento de un espacio para la primera infancia.  </font></p>
+				              <p><a href="https://www.idartes.gov.co/es/agenda/lanzamiento/aniversario-el-castillo-de-las-artes" style="color:white" class="btn btn-primary">18 de diciembre&nbsp;</a></p>
+							 
+		                  </div>
+		                </td>
+          				</table>
+          			</td>
+              </tr>
+              <tr>
+          			<td style="padding-bottom: 30px;">
+          				<table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+          					            <td valign="middle" width="50%"><a href="https://forms.gle/TMCPrQj5rns8Sq6a8"><img src="Fotos editadas/7.idpc16122021" alt="" style="width: 100%; max-width: 600px; height: auto; margin: auto; display: block;"></a>
+		                    </td>
+		                <td valign="middle" width="50%">
+		                  <div class="text-program" style="text-align: left; padding-left:25px;">
+		                  	<span class="price"><font color="#e8b43e">Rescate, apropiación y salvaguarda del legado de los ancestros afro 	 	</font></span>
+				            
+			              	<p><font color="white">Este es un espacio que da cuenta de los saberes de las comunidades negras y afrodescendientes, y vincula a diversas poblaciones en el aprendizaje de estos legados. Martes y jueves de 10:00 a.m. a 12:00 m., domingos de 11:00 a.m. a 1:00 p.m. </font> </p>
+				              	<p><a href="https://forms.gle/TMCPrQj5rns8Sq6a8" style="color:white" class="btn btn-primary">Inscríbete aquí&nbsp;</a></p>
+		                  </div>
+		                </td>
+          				</table>
+          			</td>
+              </tr>
+					
+							<tr>
+          			<td style="padding-bottom: 30px;">
+          				<table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+          					            <td valign="middle" width="50%"><a href="https://fuga.gov.co/noticias/la-travestiteca-una-mirada-al-universo-de-las-mujeres-trans-del-barrio-santa-fe"><img src="Fotos editadas/8.fuga16122021" alt="" style="width: 100%; max-width: 600px; height: auto; margin: auto; display: block;"></a>
+		                                </td>
+		                <td valign="middle" width="50%">
+		                  <div class="text-program" style="text-align: left; padding-left:25px;">
+		                  	<span class="price"><font color="#e8b43e">Una mirada al universo de las mujeres trans del Barrio Santa Fe</font></span>
+			              
+			              	<p><font color="white">La Travestiteca es una exposición y plataforma virtual que pone en circulación una retrospectiva de obras que dan cuenta de un proceso del arte en el trabajo social y local de la Red Comunitaria Trans en el Barrio Santa Fe, localidad de Los Mártires. De martes a sábado.<a href="https://nidos.gov.co/divirtiendonos">.</a></p>
+								
+								<p><a href="https://fuga.gov.co/noticias/la-travestiteca-una-mirada-al-universo-de-las-mujeres-trans-del-barrio-santa-fe" style="color:white" class="btn btn-primary"> 10:00 a.m. a 5:00 p.m. </a></p>
+				              	
+		                  </div>
+		                </td>
+          				</table>
+          			</td>
+              </tr>
+					
+					
+					
+					
+					<tr>
+          			<td style="padding-bottom: 30px;">
+          				<table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+          					                  <td valign="middle" width="50%"><img src="Fotos editadas/9.Capital16122021" alt="" style="width: 100%; max-width: 600px; height: auto; margin: auto; display: block;">
+		                    </td>
+		                <td valign="middle" width="50%">
+		                  <div class="text-program" style="text-align: left; padding-left:25px;">
+		                  	<span class="price"><font color="#e8b43e">Final Torneo Distrital de Fútbol Femenino</font></span>
+			              
+			              	<p><font color="white">Este evento deportivo llamado ‘de la cancha al estadio’ busca fomentar los valores de solidaridad, confianza, trabajo en equipo y apropiación del espacio público, a través del fútbol femenino. Capital, lunes 20 de diciembre a las 6:00 p.m.
+</p>
+				              	
+		                  </div>
+		                </td>
+          				</table>
+          			</td>
+              </tr>
+					
+					<tr>
+          			<td style="padding-bottom: 30px;">
+          				<table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+          					                    <td valign="middle" width="50%"><a href="https://conexioncapital.co/eureka-tu-canal/"><img src="Fotos editadas/10.eureka16122021" alt="" style="width: 100%; max-width: 600px; height: auto; margin: auto; display: block;"></a>
+		                    </td>
+		                <td valign="middle" width="50%">
+		                  <div class="text-program" style="text-align: left; padding-left:25px;">
+		                  	<span class="price"><font color="#e8b43e">ASK Lara (Pregúntale a Lara) </font></span>
+			              
+			              	<p><font color="white">Cada episodio aborda las cosas que afectan a los adolescentes en la pubertad. Lunes a viernes.
+
+</p>
+				              	<p><a href="https://conexioncapital.co/eureka-tu-canal/" style="color:white" class="btn btn-primary"> 6:00 p.m. y 8:00 p.m.  </a></p>
+		                  </div>
+		                </td>
+          				</table>
+          			</td>
+						
+						<tr>
+          			<td style="padding-bottom: 30px;">
+          				
+          			</td>
+							<tr>
+          			<td style="padding-bottom: 30px;">
+          				
+          			</td>
+					
+					
+					
+					<tr>
+          			<td style="padding-bottom: 30px;">
+          				<table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+          					        <td valign="middle" width="50%">
+		                    </td>
+		                <td valign="middle" width="50%">
+		                  <div class="text-program" style="text-align: left; padding-left:25px;">
+		                  	<span class="price"><font color="#e8b43e"></font></span>
+			              
+			              	
+							  
+							
+		                  </div>
+							
+							
+							
+							
+		                </td>
+          				</table>
+          			</td>
+              
+					
+					
+			
+					
+				
+
+					
+				
+
+	
+					
+					
+					
+					
+					
+					
+          	</table>	
+		<tr>
+			
+			
+          <td class="bg_black" style="text-align:center; padding: 2.5em 0 0 0;background-color: #5d4294;">
+          	<div class="heading-section heading-section-white">
+          		<span class="subheading"><font color="white">Red Distrital de Bibliotecas PÚblicas de BogotÁ&nbsp;</font></span>
+            	<p><font color="white" size="+2">BIBLORED</font></p>
+          	</div>
+          	<table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+          		<tr>
+                <td width="50%">
+                  <div class="project-entry"> <a href="https://www.biblored.gov.co/programate/carrera-de-observacion-tesoros-de-la-barco-0"><img src="Fotos editadas/11a.Biblored16122021" alt="" style="width: 100%; max-width: 300px; height: auto; margin: auto; display: block;"></a>
+                  </div>
+                </td>
+                <td width="50%">
+                  <div class="project-entry"> <a href="https://www.biblored.gov.co/programate/carrera-de-observacion-tesoros-de-la-barco-0"><img src="Fotos editadas/11.Biblored16122021" alt="" height="300" style="width: 100%; max-width: 300px; height: auto; margin: auto; display: block;"></a>
+                  </div>
+                </td>
+              </tr>
+          	</table>
+          	<table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+          		<tr>
+                <td width="50%">
+                  <div class="project-entry"> <a href="https://www.biblored.gov.co/programate/mozart-y-beethoven-en-los-espejos-de-agua"><img src="Fotos editadas/12.Biblored16122021" alt="" style="width: 100%; max-width: 300px; height: auto; margin: auto; display: block;"></a>
+                  </div>
+                </td>
+                <td width="50%">
+                  <div class="project-entry"> <a href="https://www.biblored.gov.co/programate/mozart-y-beethoven-en-los-espejos-de-agua"><img src="Fotos editadas/12a.Biblored16122021" alt="" style="width: 100%; max-width: 300px; height: auto; margin: auto; display: block;"></a>
+                  </div>
+                </td>
+              </tr>
+          	</table>
+          </td>
+        </tr><!-- end: tr -->
+		
+		  
+		  <tr>
+	        <td class="bg_dark email-section" style= "background-color: #46395e">
+	        	<div class="heading-section" style="text-align: center;  padding: 0em 0 0 0;">
+	        			          	<p><font color="white" size="+2">MOVIDA LOCAL</font></p>
+	        	</div>
+		  
+		  <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+	        		<tr>
+          			<td style="padding-bottom: 30px;">
+						
+          				<table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+          					                <td valign="middle" width="50%"><a href="https://docs.google.com/forms/d/e/1FAIpQLScYvqg5VSO3uPu4F8T0v8Zmf9_rpt3v_PR4aaLab62mFvxzoQ/viewform"><img src="Fotos editadas/13.ml16122021" alt="" style="width: 100%; max-width: 600px; height: auto; margin: auto; display: block;"></a>
+		                                    </td>
+		                <td valign="middle" width="50%">
+		                  <div class="text-program" style="text-align: left; padding-left:25px;">
+		                  	<span class="price"><font color="#e8b43e">Convocatoria 'Al son del Arte' 3ra temporada
+</font></span>
+				              	
+				              	<p><font color="white">Participa de forma individual o con tu crew y sé parte de uno de los 20 capítulos de esta temporada. Se elegirán 5 proyectos por temporada.&nbsp; &nbsp; &nbsp; &nbsp;</font></p>
+							  
+							  <p><a href="https://docs.google.com/forms/d/e/1FAIpQLScYvqg5VSO3uPu4F8T0v8Zmf9_rpt3v_PR4aaLab62mFvxzoQ/viewform"style="color:white"  class="btn btn-primary">Hasta el 17 de diciembre</a></p>
+							  
+							  
+							  
+				             
+		                  </div>
+		                </td>
+							
+							
+							
+							
+							
+          				</table>
+						
+							
+						
+          			</td>
+              </tr>
+             	
+					
+					
+          	</table>
+				
+				
+				
+				
+			
+					  <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+	        		<tr>
+          			
+          			</td>
+              </tr>
+             	
+					
+					
+          	</table>
+				
+				
+				
+		  		</td>	
+              </tr>
+		  
+				
+				
+				
+				<tr>
+	        <td class="bg_dark email-section" style= "background-color: #46395e">
+	        <div class="heading-section" style="text-align: center; margin-top: -5px;" >
+	        			          	<p><font color="white" size="+2">AGENDA CIUDAD</font></p>
+	        	</div>
+		  
+				<table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+	        		<tr>
+          			<td style="padding-bottom: 30px;">
+						
+          				<table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+          					                          <td valign="middle" width="50%"><img src="Fotos editadas/14.ac16122021" alt="" style="width: 100%; max-width: 600px; height: auto; margin: auto; display: block;">
+		                                              </td>
+		                <td valign="middle" width="50%">
+		                  <div class="text-program" style="text-align: left; padding-left:25px;">
+		                  	<span class="price"><font color="#e8b43e">‘Andrés y la danza folclórica’ 
+                            </font></span>
+				              	
+				              	<p><font color="white">El episodio, que muestra un intercambio cultural entre dos niños colombianos que bailan ritmos folclóricos con bailarines profesionales de México, se podrá ver a través de Escuela Plus –canal de educación audiovisual de DirecTV (804).</font></p>
+				              	
+		                  </div>
+		                </td>
+							
+							
+												
+							
+          				</table>
+						
+							
+						
+          			</td>
+              </tr>
+             	
+				
+					
+          	</table>
+				
+				
+		  <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+	        		
+			
+			  
+			  
+			  	<tr>
+          			<td style="padding-bottom: 0px;">
+          				<table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+          					                  <td valign="middle" width="50%"><a href="http://www.teatromayor.org/"><img src="Fotos editadas/15.ac16122021" alt="" style="width: 100%; max-width: 600px; height: auto; margin: auto; display: block;"></a>
+		                    </td>
+		                <td valign="middle" width="50%">
+		                  <div class="text-program" style="text-align: left; padding-left:25px;">
+		                  	<span class="price"> <font color="#e8b43e">Arre borriquita 	</font></span>
+				              		
+			              	<p> <font color="white">Celebra la Navidad con un espectáculo para toda la familia que rescata la tradición de los Villancicos y cuenta la historia de la Navidad de una manera emocionante y divertida. </font></p>
+				              	<p><a href="http://www.teatromayor.org/"style="color:white"  class="btn btn-primary">Del 16 al 23 de diciembre</a></p>
+		                  </div>
+		                </td>
+						</table>
+						
+						<table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%"><p></p>
+          					                 
+				              	
+							  
+		                  </div>
+		                </td>
+						</table>
+          			</td>
+              </tr>	
+			  
+			  
+			  
+          	</table>
+				
+				
+		                  </div>
+		                </td>
+						</table>
+          			</td>
+              </tr>
+			
+					 
+						 <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+	        					  
+			  		  
+			  
+			  		
+			  
+			 
+					
+					
+					
+          	</table>
+				
+				
+				
+		  		</td>	
+              </tr>
+				
+				
+		  
+      </table>
+		  
+		  
+		    
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+      <table align="center" role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="margin: auto;background-color: #5d4294">
+        <tr>
+        	<td valign="middle" class="bg_black footer email-section"><table width="80%" border="0">
+        	  <tbody>
+        	    <tr>
+        	      <td align="center" valign="middle"><a href="https://www.culturarecreacionydeporte.gov.co/"><img src="http://scrd.gov.co/cultura/logoscrd.png" width="400px" height="auto" alt=""/></a></td>
+      	      </tr>
+        	
+        	    <tr>
+        	      <td align="center" valign="middle"><p><a href="https://docs.google.com/forms/d/e/1FAIpQLSdPwxRx6IG5UQNAkkpbUnAj1j1WRQvUE7nGyjahd_u4Z52yZw/viewform" style="color: rgba(255,255,255,.4);">Suscríbete al boletín IMPERDIBLES aquí</a><a href="#" style="color: rgba(255,255,255,.4);"></a></p></td>
+      	      </tr>
+      	    </tbody>
+      	  </table></td>
+        </tr>
+      </table>
+
+    </div>
+  </center>
+</body>
+</html>
