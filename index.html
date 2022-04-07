@@ -1,0 +1,903 @@
+<!DOCTYPE html>
+<html class="cssimperdibles" lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+<head>
+    <meta charset="utf-8"> <!-- utf-8 works for most cases -->
+    <meta name="viewport" content="width=device-width"> <!-- Forcing initial-scale shouldn't be necessary -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"> <!-- Use the latest (edge) version of IE rendering engine -->
+    <meta name="x-apple-disable-message-reformatting">  <!-- Disable auto-scale in iOS 10 Mail entirely -->
+    <title></title> <!-- The title tag shows in email notifications, like Android 4.4. -->
+
+    <link href="https://fonts.googleapis.com/css?family=Work+Sans:200,300,400,500,600,700" rel="stylesheet">
+
+    <!-- CSS Reset : BEGIN -->
+    <style>
+
+        /* What it does: Remove spaces around the email design added by some email clients. */
+        /* Beware: It can remove the padding / margin and add a background color to the compose a reply window. */
+        html,
+.cssimperdibles body {
+    margin: 0 auto !important;
+    padding: 0 !important;
+    height: 100% !important;
+    width: 100% !important;
+    background: #f1f1f1;
+}
+
+/* What it does: Stops email clients resizing small text. */
+* {
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+}
+
+/* What it does: Centers email on Android 4.4 */
+.cssimperdibles div[style*="margin: 16px 0"] {
+    margin: 0 !important;
+}
+
+/* What it does: Stops Outlook from adding extra spacing to tables. */
+.cssimperdibles table,
+.cssimperdibles td {
+    mso-table-lspace: 0pt !important;
+    mso-table-rspace: 0pt !important;
+}
+
+/* What it does: Fixes webkit padding issue. */
+.cssimperdibles table {
+    border-spacing: 0 !important;
+    border-collapse: collapse !important;
+    table-layout: fixed !important;
+    margin: 0 auto !important;
+}
+
+/* What it does: Uses a better rendering method when resizing images in IE. */
+.cssimperdibles img {
+    -ms-interpolation-mode:bicubic;
+}
+
+/* What it does: Prevents Windows 10 Mail from underlining links despite inline CSS. Styles for underlined links should be inline. */
+.cssimperdibles a {
+    text-decoration: none;
+}
+
+/* What it does: A work-around for email clients meddling in triggered links. */
+*[x-apple-data-detectors],  /* iOS */
+.cssimperdibles .unstyle-auto-detected-links *,
+.cssimperdibles .aBn {
+    border-bottom: 0 !important;
+    cursor: default !important;
+    color: inherit !important;
+    text-decoration: none !important;
+    font-size: inherit !important;
+    font-family: inherit !important;
+    font-weight: inherit !important;
+    line-height: inherit !important;
+}
+
+/* What it does: Prevents Gmail from displaying a download button on large, non-linked images. */
+.cssimperdibles .a6S {
+    display: none !important;
+    opacity: 0.01 !important;
+}
+
+/* What it does: Prevents Gmail from changing the text color in conversation threads. */
+.cssimperdibles .im {
+    color: inherit !important;
+}
+
+/* If the above doesn't work, add a .g-img class to any image in question. */
+.cssimperdibles img.g-img + div {
+    display: none !important;
+}
+
+/* What it does: Removes right gutter in Gmail iOS app: https://github.com/TedGoas/Cerberus/issues/89  */
+/* Create one of these media queries for each additional viewport size you'd like to fix */
+
+/* iPhone 4, 4S, 5, 5S, 5C, and 5SE */
+@media only screen and (min-device-width: 320px) and (max-device-width: 374px) {
+    .cssimperdibles u ~ div .email-container {
+        min-width: 320px !important;
+    }
+}
+/* iPhone 6, 6S, 7, 8, and X */
+@media only screen and (min-device-width: 375px) and (max-device-width: 413px) {
+    .cssimperdibles u ~ div .email-container {
+        min-width: 375px !important;
+    }
+}
+/* iPhone 6+, 7+, and 8+ */
+@media only screen and (min-device-width: 414px) {
+    .cssimperdibles u ~ div .email-container {
+        min-width: 414px !important;
+    }
+}
+
+
+    </style>
+
+    <!-- CSS Reset : END -->
+
+    <!-- Progressive Enhancements : BEGIN -->
+    <style>
+
+.cssimperdibles  .primary{
+	background: #e8b43e;
+}
+.cssimperdibles .cssimperdibles .bg_white{
+	background: #ffffff;
+}
+.cssimperdibles .bg_light{
+	background: #fafafa;
+}
+.cssimperdibles .bg_black{
+	background: #5d4294;
+}
+.cssimperdibles .bg_dark{
+	background: rgba(27,11,58,.8);
+}
+.cssimperdibles .email-section{
+	padding:1.5em;
+}
+
+/*BUTTON*/
+.cssimperdibles .btn{
+	padding: 5px 15px;
+	display: inline-block;
+}
+.cssimperdibles .btn.btn-primary{
+	border-radius: 30px;
+	background: #5d4294;
+	color: #ffffff;
+}
+.cssimperdibles .btn.btn-white{
+	border-radius: 30px;
+	background: #ffffff;
+	color: #000000;
+}
+.cssimperdibles .btn.btn-white-outline{
+	border-radius: 30px;
+	background: transparent;
+	border: 1px solid #fff;
+	color: #fff;
+}
+
+.cssimperdibles h1,.cssimperdibles h2,.cssimperdibles h3,.cssimperdibles h4,.cssimperdibles h5,.cssimperdibles h6{
+	font-family: 'Work Sans', sans-serif;
+	margin-top: 0;
+	font-weight: normal;
+	color: rgba(255,255,255,.9);
+}
+
+.cssimperdibles body{
+	font-family: 'Work Sans', sans-serif;
+	font-weight: 400;
+	font-size: 15px;
+	line-height: 1.4;
+	color: rgba(255,255,255,.8);
+}
+
+.cssimperdibles a{
+	color: #5d4294;
+}
+
+.cssimperdibles table{
+}
+/*LOGO*/
+
+.cssimperdibles .logo{
+	margin: 0;
+	display: inline-block;
+	position: absolute;
+	top: 10px;
+	left: 0;
+	right: 0;
+	margin-bottom: 0;
+}
+
+.cssimperdibles .logo a{
+	color: #fff;
+	font-size: 24px;
+	font-weight: 700;
+	text-transform: uppercase;
+	font-family: 'Work Sans', sans-serif;
+	display: inline-block;
+	border: 2px solid #fff;
+	line-height: 1.3;
+	padding: 10px 15px 4px 15px;
+	margin: 0;
+}
+.cssimperdibles .logo h1 a span{
+	line-height: 1;
+}
+
+.cssimperdibles .navigation{
+	padding: 0;
+}
+.cssimperdibles .navigation li{
+	list-style: none;
+	display: inline-block;;
+	margin-left: 5px;
+	font-size: 13px;
+	font-weight: 500;
+}
+.cssimperdibles .navigation li a{
+	color: rgba(0,0,0,.4);
+}
+
+/*HERO*/
+.cssimperdibles .hero{
+	position: relative;
+	z-index: 0;
+}
+
+.cssimperdibles .hero .overlay{
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	content: '';
+	width: 100%;
+	background: #000;
+	z-index: -1;
+	opacity: .3;
+}
+
+.cssimperdibles .hero .text{
+	color: rgba(255,255,255,.9);
+}
+.cssimperdibles .hero .text h2{
+	color: #fff;
+	font-size: 40px;
+	margin-bottom: 20px;
+	font-weight: 300;
+	line-height: 1.3;
+	/*text-transform: uppercase;*/
+}
+.cssimperdibles .hero .text .icon{
+	position: absolute;
+	bottom: -30px;
+	left: 0;
+	right: 0;
+}
+
+
+/*HEADING SECTION*/
+.cssimperdibles .heading-section{
+}
+.cssimperdibles .heading-section h2{
+	color: rgba(255,255,255,.9);
+	font-size: 28px;
+	margin-top: 0;
+	line-height: 1.4;
+	font-weight: 400;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+}
+.cssimperdibles .heading-section .subheading{
+	margin-bottom: 20px !important;
+	display: inline-block;
+	font-size: 13px;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	color: rgba(255,255,255,.4);
+	position: relative;
+}
+.cssimperdibles .heading-section .subheading::after{
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: -5px;
+	content: '';
+	width: 100%;
+	height: 2px;
+	background: #e8b43e;
+	margin: 0 auto;
+}
+.heading-section .subheading::before{
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: -10px;
+	content: '';
+	width: 70%;
+	height: 2px;
+	background: #e8b43e;
+	margin: 0 auto;
+}
+
+.cssimperdibles .heading-section-white{
+	color: rgba(255,255,255,.8);
+}
+.cssimperdibles .heading-section-white h2{
+	font-family: 
+	line-height: 1;
+	padding-bottom: 0;
+}
+.cssimperdibles .cssimperdibles .heading-section-white h2{
+	color: #ffffff;
+}
+.cssimperdibles .heading-section-white .subheading{
+	margin-bottom: 0;
+	display: inline-block;
+	font-size: 13px;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	color: rgba(255,255,255,.4);
+}
+
+
+/*TRAINER*/
+.cssimperdibles .trainer{
+
+}
+.cssimperdibles .trainer h2{
+	margin-bottom: 5px;
+}
+.cssimperdibles .trainer span{
+	text-transform: uppercase;
+	color: rgba(255,255,255,.8);
+}
+
+/*PROGRAM*/
+.cssimperdibles .text-program .price{
+	font-size: 20px;
+	margin-bottom: 0;
+	color: #e8b43e;
+}
+.cssimperdibles .text-program h2{
+	font-size: 18px;
+	margin-bottom: 10px;
+	font-weight: 500;
+}
+.cssimperdibles .text-program p{
+	margin-top: 0;
+}
+
+/*FOOTER*/
+
+.cssimperdibles .footer{
+	color: rgba(255,255,255,.5);
+
+}
+.cssimperdibles .footer .heading{
+	color: #ffffff;
+	font-size: 20px;
+}
+.cssimperdibles .footer ul{
+	margin: 0;
+	padding: 0;
+}
+.cssimperdibles .footer ul li{
+	list-style: none;
+	margin-bottom: 10px;
+}
+.cssimperdibles .footer ul li a{
+	color: rgba(255,255,255,1);
+}
+
+
+@media screen and (max-width: 500px) {
+
+
+}
+
+
+    </style>
+
+
+</head>
+
+<body width="100%" style="margin: 0; padding: 0 !important; mso-line-height-rule: exactly; background-color: #222222;">
+	<center style="width: 100%; background-color: #f1f1f1;">
+    <div style="display: none; font-size: 1px;max-height: 0px; max-width: 0px; opacity: 0; overflow: hidden; mso-hide: all; font-family: sans-serif;">
+      &zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;
+    </div>
+    <div style="max-width: 600px; margin: 0 auto;" class="email-container cssimperdibles ">
+    	<!-- BEGIN BODY -->
+      <table align="center" role="presentation" cellspacing="0" cellpadding="0" border="0" width="600px" style="margin: auto;">
+	      <tr>
+          <td><a href="https://www.culturarecreacionydeporte.gov.co/"><img src="Fotos_editadas/imperdibles_cabezote_2022.jpg" alt="" style="width: 100%; max-width: 600px; height: auto; margin: auto; display: block;"></a></td>
+			  
+	      </tr><!-- end tr -->
+	      <tr>
+          <td class="bg_black email-section" style="text-align:center; padding-top: 1em; padding-bottom: 0em; background-color: #5d4294;">
+          	<div class="heading-section heading-section-white">
+          		<span class="subheading"><font color="white">SEMANA DEL 8 AL 14 DE ABRIL</font></span>
+                <p><font color="white">Proyecciones de Coldplay y Daft Punk en el Planetario, inscripciones a Deporte Local, Libro al viento en la FUGA, conciertos de OFB, ferias y muchas más actividades imperdibles.</font><br>
+                </p>
+            	<p><font color="white" size="+2">EN ESCENA</font></p>            	
+          	</div>
+          </td>
+        </tr><!-- end: tr -->
+        <tr>
+          <td class="bg_dark" style="width: 100%;">
+			  
+			   <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+          		<tr>
+          			<td valign="middle" width="50%" bgcolor="#e8b43e">
+                  <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                    <tr>
+                      <td><a href="https://www.idartes.gov.co/es/noticias/vacaciones-recreativas-de-semana-santa-de-la-cinemateca"><img src="Fotos_editadas/1.idartes07042022.jpg" alt="" style="width: 100%; max-width: 600px; height: auto; margin: auto; display: block;"></a>
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+                <td valign="middle" width="50%" bgcolor=#e8b43e>
+                  <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                    <tr>
+                      <td class="trainer" style="text-align: left; padding:25px;">
+					    <p><font color="#5d4294" size="4px">Vacaciones recreativas con la Cinemateca
+</font></p>
+		          
+				              <p><font color="white">Talleres, conciertos, espectáculos escénicos, experiencias audiovisuales y artísticas, y muchas más actividades hasta el 16 de abril.
+¡Te esperamos!</font></p>
+						  	<p><a href="https://www.idartes.gov.co/es/noticias/vacaciones-recreativas-de-semana-santa-de-la-cinemateca" style="color:white" class="btn btn-primary">Más información</a></p>
+				              	
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+          	</table>
+			  
+			  
+          	
+			  
+			  
+			  
+			  
+			  <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%"><a name="biblored"></a>
+          		<tr>
+          			<td valign="middle" width="50%">
+                  <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                    <tr>
+						<td valign="middle" width="50%" bgcolor="#e8b43e">
+                  <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                    <tr>
+                      <td class="trainer" style="text-align: left; padding:30px;">
+						  <p><font color="#5d4294" size="4px">El vuelo de las jorobadas </font></p>
+				      
+						  
+			              	<p><font color="white">Acompáñanos, en la Biblioteca El Parque, a recorrer un viaje, un viaje largo,  mágico y fascinante que ocurre todos los años en las costas del Pacífico colombiano. Vamos a conocer el vuelo y las acrobacias que emprenden las ballenas jorobadas. 13 de abril a las 3:00 p.m.
+</font> </p>
+					
+						  
+				              	
+                      </td>
+                     
+                    </tr>
+                  </table>
+                </td>
+                
+					 <td bgcolor="#e8b43e"><img src="Fotos_editadas/2.ofb07042022.jpg" alt="" style="width: 100%; max-width: 600px; height: auto; margin: auto; display: block;">
+                      </td>
+					
+					
+					
+					
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+          	</table>
+			  
+			 
+			  
+			  
+			  
+			  
+		<table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%"> <a name="fuga"></a>
+          		<tr>
+          			<td valign="middle" width="50%" bgcolor="#e8b43e">
+                  <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                    <tr>
+                      <td><a href="https://fuga.gov.co/agenda"><img src="Fotos_editadas/3.fuga07042022.jpg" alt="" style="width: 100%; max-width: 600px; height: auto; margin: auto; display: block; "></a>
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+                <td valign="middle" width="50%" bgcolor=#e8b43e>
+                  <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                    <tr>
+                      <td class="trainer" style="text-align: left; padding:25px; background-color:#e8b43e">
+						  <p><font color="#5d4294" size="4px">Libro al viento en el centro de Bogotá </font></p>
+				              	
+				              	<p><font color="white">En la calle 10 con carrera 3, la Biblioteca de la FUGA realizará el lanzamiento del Libro al viento “La Calle 10”, del escritor colombiano Manuel Zapata Olivella. Entrada libre. </p>
+				              	<p><a href="https://fuga.gov.co/agenda" style="color:white" class="btn btn-primary">9 de abril | 10:00 a.m.  </a></p>
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+          	</table>
+			  
+			  
+			  
+			  
+			  
+			  
+			  
+			  
+			  
+          </td>
+        </tr><!-- end: tr -->
+        
+		  
+		  
+		  <tr>
+          <td class="bg_black" style="text-align:center; padding: 2.5em 0 0 0;background-color: #5d4294;"> <a name="ofb"></a>
+          	<div class="heading-section heading-section-white">
+          		<span class="subheading"><font color="white">ORQUESTA FILARMÓNICA DE BOGOTÁ</font></span>
+            	<p><font color="white" size="+2">OFB&nbsp;</font></p>
+          	</div>
+          	<table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+          		<tr>
+                <td width="50%">
+                  <div class="project-entry"> <a href="https://filarmonicabogota.gov.co/eventos/orquesta-filarmonica-juvenil-de-camara-director-roger-diaz-cajamarca-solista-veronica-cangemi-soprano/?occurrence=2022-04-08"><img src="Fotos_editadas/3b.07042022.jpg" alt="" style="width: 100%; max-width: 300px; height: auto; margin: auto; display: block;"></a>
+                  </div>
+                </td>
+                <td width="50%">
+                  <div class="project-entry"> <a href="https://filarmonicabogota.gov.co/eventos/orquesta-filarmonica-juvenil-de-camara-director-roger-diaz-cajamarca-solista-veronica-cangemi-soprano/?occurrence=2022-04-08"><img src="Fotos_editadas/3a.ofb07042022.jpg" alt="" style="width: 100%; max-width: 300px; height: auto; margin: auto; display: block;"></a>
+                  </div>
+                </td>
+              </tr>
+          	</table>
+          	<table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+          		<tr>
+                <td width="50%">
+                  <div class="project-entry"> <a href="https://filarmonicabogota.gov.co/eventos/orquesta-filarmonica-juvenil-directora-paola-avila-4/?occurrence=2022-04-13"><img src="Fotos_editadas/3d.ofb07042022.jpg" alt="" style="width: 100%; max-width: 300px; height: auto; margin: auto; display: block;"></a>
+                  </div>
+                </td>
+                <td width="50%">
+                  <div class="project-entry"> <a href="https://filarmonicabogota.gov.co/eventos/orquesta-filarmonica-juvenil-directora-paola-avila-4/?occurrence=2022-04-13"><img src="Fotos_editadas/3c.07042022.jpg" alt="" style="width: 100%; max-width: 300px; height: auto; margin: auto; display: block;"></a>
+                  </div>
+                </td>
+              </tr>
+          	</table>
+          </td>
+        </tr><!-- end: tr -->
+	     
+		  
+		  <tr>
+	        <td class="bg_dark email-section" style= "background-color: #46395e">
+	        	<div class="heading-section" style="text-align: center;  padding: 2.5em 0 0 0;">
+	        		<span class="subheading"><font color="white">PARTICIPA</font></span>
+	          	<p><font color="white" size="+2">TODOS SOMOS CREADORES</font></p>
+	        	</div>
+	        	<table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+	        		
+					
+					
+					<tr>
+          			<td style="padding-bottom: 30px;">
+          				<table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+          					            <td valign="middle" width="50%"><a href="https://www.idartes.gov.co/es/tipo-eventos/proyeccion-laser"><img src="Fotos_editadas/5.idartes07042022.jpg" alt="" style="width: 100%; max-width: 600px; height: auto; margin: auto; display: block;"></a>
+		                    </td>
+		                <td valign="middle" width="50%">
+		                  <div class="text-program" style="text-align: left; padding-left:25px;">
+		                  	<span class="price"><font color="#e8b43e">Proyecciones láser de Coldplay y Daft Punk
+</font></span>
+				           
+			              	<p><font color="white">Durante todo el mes, el Planetario traerá la proyección láser de <a href="https://www.idartes.gov.co/es/agenda/proyeccion-laser/proyeccion-laser-de-coldplay-0"><font color="43a7ed">Coldplay</a></font> y de <a href="https://www.idartes.gov.co/es/agenda/proyeccion-laser/show-laser-de-daft-punk-0"><font color="43a7ed">Daft Punk</a></font>, con una selección de las canciones más significativas.</font></p>
+				         
+							 
+		                  </div>
+		                </td>
+          				</table>
+          			</td>
+              </tr>
+					<tr>
+          			<td style="padding-bottom: 30px;">
+          				<table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+          					        <td valign="middle" width="50%"><a href="https://conexioncapital.co/"><img src="Fotos_editadas/6.capital07042022.jpg" alt="" style="width: 100%; max-width: 600px; height: auto; margin: auto; display: block;"></a>
+		                    </td>
+		                <td valign="middle" width="50%">
+		                  <div class="text-program" style="text-align: left; padding-left:25px;">
+		                  	<span class="price"><font color="#e8b43e">Comida de Guerra
+</font></span>
+				           
+			              	<p><font color="white">El recorrido de una cena de cuatro tiempos inspirada en la guerra, será por distintos lugares del mundo, Austria, España, Perú, Vietnam, Colombia, entre otros.&nbsp;7:00 p.m. y 10:00 p.m.
+                            </font></p>
+				              	<p><a href="https://conexioncapital.co/" style="color:white" class="btn btn-primary">Lunes 11 y martes 12 de abril</a></p>
+							 
+		                  </div>
+		                </td>
+          				</table>
+          			</td>
+              </tr>
+              <tr>
+          			<td style="padding-bottom: 30px;">
+          				<table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+          					        <td valign="middle" width="50%"><a href="https://conexioncapital.co/eureka-tu-canal/"><img src="Fotos_editadas/7.eureka07042022.jpg" alt="" style="width: 100%; max-width: 600px; height: auto; margin: auto; display: block;"></a>
+		                    </td>
+		                <td valign="middle" width="50%">
+		                  <div class="text-program" style="text-align: left; padding-left:25px;">
+		                  	<span class="price"><font color="#e8b43e">Cucutú</font></span>
+				            
+			              	<p><font color="white">Los Cucutú son un grupo de amigos compuesto por pájaros y cucarrones. En cada capítulo se juntan a la hora del recreo a jugar y a crear experiencias sonoras. TDT: 6:30 a.m. - 8:30 a.m. - 10:30 a.m. Capital: 7:30 a.m. </font> </p>
+				              	<p><a href="https://conexioncapital.co/eureka-tu-canal/" style="color:white" class="btn btn-primary">Lunes a viernes</a></p>
+		                  </div>
+		                </td>
+          				</table>
+          			</td>
+              </tr>
+					
+							<tr>
+          			<td style="padding-bottom: 30px;">
+          				<table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+          					          <td valign="middle" width="50%"><a href="https://fuga.gov.co/agenda"><img src="Fotos_editadas/8.Fuga07042022.jpg" alt="" style="width: 100%; max-width: 600px; height: auto; margin: auto; display: block;"></a>
+		                            </td>
+		                <td valign="middle" width="50%">
+		                  <div class="text-program" style="text-align: left; padding-left:25px;">
+		                  	<span class="price"><font color="#e8b43e">Humboldt y Bonpland en la FUGA </font></span>
+			              
+			              	<p><font color="white">"Encuentros: anhelos de observación y escucha" es el nombre de la nueva exposición de la FUGA, en articulación con el grupo de investigación de la Universidad Javeriana, que gira en torno a Alexander von Humboldt y Aimé Bonpland.&nbsp;10:00 a.m. a 5:00 p.m.</font></p>
+								
+								
+				              	<p><a href="https://fuga.gov.co/agenda" style="color:white" class="btn btn-primary">Martes a sábado </a></p>
+		                  </div>
+		                </td>
+          				</table>
+          			</td>
+              </tr>
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					<tr>
+          			<td style="padding-bottom: 30px;">
+          				<table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+          					      <td valign="middle" width="50%"><img src="Fotos_editadas/9.biblored07042022.jpg" alt="" style="width: 100%; max-width: 600px; height: auto; margin: auto; display: block;">
+		                    </td>
+		                <td valign="middle" width="50%">
+		                  <div class="text-program" style="text-align: left; padding-left:25px;">
+		                  	<span class="price"><font color="#e8b43e">¿Los animales escriben cartas?</font></span>
+			              
+			               <p><font color="white">Te esperamos en la Biblioteca Pública de Suba Francisco José de Caldas para descubrir las cartas más divertidas y entretenidas, escritas por animales. Dato curioso: no todas las cartas son escritas por humanos. 8 de abril a las 3:00 p.m.</font></p>
+							  
+						    <p> </p>
+				             
+							  
+							
+		                  </div>
+		                </td>
+          				</table>
+          			</td>
+              </tr>
+					
+					
+				
+			
+					
+				
+
+					
+				
+
+	
+					
+					
+					
+					
+					
+					
+          	</table>	
+		<tr>
+		
+          <td class="bg_black" style="text-align:center; padding: 2.5em 0 0 0;background-color: #5d4294;">
+          	<div class="heading-section heading-section-white">
+          		<span class="subheading"><font color="white">INSTITUTO DISTRITAL DE RECREACIÓN Y DEPORTE</font></span>
+            	<p><font color="white" size="+2">IDRD&nbsp;</font></p>
+          	</div>
+          	<table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+          		<tr>
+                <td width="50%">
+                  <div class="project-entry"> <a href="https://www.idrd.gov.co/eventos/celebracion-dia-mundial-de-la-actividad-fisica"><img src="Fotos_editadas/10.idrd07042022.jpg" alt="" style="width: 100%; max-width: 300px; height: auto; margin: auto; display: block;"></a>
+                  </div>
+                </td>
+                <td width="50%">
+                  <div class="project-entry"> <a href="https://www.idrd.gov.co/eventos/celebracion-dia-mundial-de-la-actividad-fisica"><img src="Fotos_editadas/10a.07042022.jpg" alt="" style="width: 100%; max-width: 300px; height: auto; margin: auto; display: block;"></a>
+                  </div>
+                </td>
+              </tr>
+          	</table>
+          	<table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+          		<tr>
+                <td width="50%">
+                  <div class="project-entry"> <a href="https://idrd.gov.co/noticias/inicia-el-programa-bogota-es-deporte-local"><img src="Fotos_editadas/11a.idrd07042022.jpg" alt="" style="width: 100%; max-width: 300px; height: auto; margin: auto; display: block;"></a>
+                  </div>
+                </td>
+                <td width="50%">
+                  <div class="project-entry"> <a href="https://idrd.gov.co/noticias/inicia-el-programa-bogota-es-deporte-local"><img src="Fotos_editadas/11.idrd07042022.jpg" alt="" style="width: 100%; max-width: 300px; height: auto; margin: auto; display: block;"></a>
+                  </div>
+                </td>
+              </tr>
+          	</table>
+          </td>
+     	
+          
+        </tr><!-- end: tr -->
+		
+		  
+		  <tr>
+	        <td class="bg_dark email-section" style= "background-color: #46395e">
+	        	<div class="heading-section" style="text-align: center;  padding: 0em 0 0 0;">
+	        			          	<p><font color="white" size="+2">MOVIDA LOCAL</font></p>
+	        	</div>
+		  
+		  <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%"> <a name="movidalocal"></a>
+	        		<tr>
+          			<td style="padding-bottom: 30px;">
+						
+          				<table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+          					          <td valign="middle" width="50%"><img src="Fotos_editadas/12.ml07042022.jpg" alt="" style="width: 100%; max-width: 600px; height: auto; margin: auto; display: block;">
+		                              </td>
+		                <td valign="middle" width="50%">
+		                  <div class="text-program" style="text-align: left; padding-left:25px;">
+		                  	<span class="price"><font color="#e8b43e">Reactívate Suba</font></span>
+				              	
+				              	<p><font color="white">Asiste a esta feria de emprendimiento en la que se ofrecerán productos del semillero de artistas de la localidad.
+El evento será en el parque Piloto Nueva Tibabuyes, desde las 10:00 a.m., este 9 de abril.</font></p>
+							  
+							  	
+				              	
+		                  </div>
+		                </td>
+							
+							
+							
+							
+							
+          				</table>
+						
+							
+						
+          			</td>
+              </tr>
+             	
+				<tr>
+          			<td style="padding-bottom: 30px;">
+						
+          				<table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+          					              <td valign="middle" width="50%"><img src="Fotos_editadas/13.ml07042022.jpg" alt="" style="width: 100%; max-width: 600px; height: auto; margin: auto; display: block;">
+		                                  </td>
+		                <td valign="middle" width="50%">
+		                  <div class="text-program" style="text-align: left; padding-left:25px;">
+		                  	<span class="price"><font color="#e8b43e">Mercadillo por la paz</font></span>
+				              	
+				              	<p><font color="white">Asiste este 9 de abril, a este evento en el que habrá círculo de la palabra, 25 proyectos de paz, muestras de arte, y música en vivo. Carrera 13 # 36-37 desde las 10:00 a.m.</font></p>
+							  
+							  	
+				              	
+		                  </div>
+		                </td>
+							
+							
+							
+							
+							
+          				</table>
+						
+							
+						
+          			</td>
+              </tr>	
+					
+          	</table>
+				
+				
+				
+				<table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+	        		<tr>
+          			
+              </tr>
+             	
+					
+					
+          	</table>
+				
+			
+					  <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+	        		<tr>
+          			
+              </tr>
+             	
+					
+					
+          	</table>
+				
+				
+				
+		  		</td>	
+              </tr>
+		  
+				
+				
+				
+				<tr>
+	        <td class="bg_dark email-section" style= "background-color: #46395e">
+	        <div class="heading-section" style="text-align: center; margin-top: -5px;" >
+	        			          	<p><font color="white" size="+2">AGENDA CIUDAD</font></p>
+	        	</div>
+		  
+		  <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%"><a name="agendaciudad"></a>
+	        		
+			  
+			  
+			  
+			  	<tr>
+          			<td style="padding-bottom: 0px;">
+          				<table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+          					            <td valign="middle" width="50%"><a href="https://www.skyzone.com.co/"><img src="Fotos_editadas/14.ac07042022.jpg" alt="" style="width: 100%; max-width: 600px; height: auto; margin: auto; display: block;"></a>
+		                    </td>
+		                <td valign="middle" width="50%">
+		                  <div class="text-program" style="text-align: left; padding-left:25px;">
+		                  	<span class="price"> <font color="#e8b43e">En el mes de la niñez, ¡a saltar!
+</font></span>
+				              		
+			              	<p> <font color="white">Durante Semana Santa, los niños y las niñas podrán disfrutar de actividades novedosas en Skyzone, parque de trampolines, en donde la actividad física es la premisa.</font></p>
+				              	<p><a href="https://www.skyzone.com.co/"style="color:white"  class="btn btn-primary">Más información  </a></p>
+		                  </div>
+		                </td>
+						</table>
+						
+						<p></p>
+						<p></p>
+						
+						
+          			</td>
+              </tr>
+			  
+	
+			  
+			  
+			  		
+			  
+			 
+					
+					
+					
+          
+		  		</td>	
+              </tr>
+				
+				
+		  
+      </table>
+		  
+		  
+		    
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+      <table align="center" role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="margin: auto;background-color: #5d4294">
+        <tr>
+        	<td valign="middle" class="bg_black footer email-section"><table width="80%" border="0">
+        	  <tbody>
+        	    <tr>
+        	      <td align="center" valign="middle"><a href="https://www.culturarecreacionydeporte.gov.co/"><img src="Fotos_editadas/logobogscrd.png" width="340" height="41" alt=""/></a></td>
+      	      </tr>
+        	
+        	    <tr>
+        	      <td align="center" valign="middle"><p><a href="https://docs.google.com/forms/d/e/1FAIpQLSdPwxRx6IG5UQNAkkpbUnAj1j1WRQvUE7nGyjahd_u4Z52yZw/viewform" style="color: rgba(255,255,255,.4);">Suscríbete al boletín IMPERDIBLES aquí</a><a href="#" style="color: rgba(255,255,255,.4);"></a></p></td>
+      	      </tr>
+      	    </tbody>
+      	  </table></td>
+        </tr>
+      </table>
+
+    </div>
+  </center>
+</body>
+</html>
