@@ -1,0 +1,929 @@
+<!DOCTYPE html>
+<html class="cssimperdibles" lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+<head>
+    <meta charset="utf-8"> <!-- utf-8 works for most cases -->
+    <meta name="viewport" content="width=device-width"> <!-- Forcing initial-scale shouldn't be necessary -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"> <!-- Use the latest (edge) version of IE rendering engine -->
+    <meta name="x-apple-disable-message-reformatting">  <!-- Disable auto-scale in iOS 10 Mail entirely -->
+    <title></title> <!-- The title tag shows in email notifications, like Android 4.4. -->
+
+    <link href="https://fonts.googleapis.com/css?family=Work+Sans:200,300,400,500,600,700" rel="stylesheet">
+
+    <!-- CSS Reset : BEGIN -->
+    <style>
+
+        /* What it does: Remove spaces around the email design added by some email clients. */
+        /* Beware: It can remove the padding / margin and add a background color to the compose a reply window. */
+        html,
+.cssimperdibles body {
+    margin: 0 auto !important;
+    padding: 0 !important;
+    height: 100% !important;
+    width: 100% !important;
+    background: #f1f1f1;
+}
+
+/* What it does: Stops email clients resizing small text. */
+* {
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+}
+
+/* What it does: Centers email on Android 4.4 */
+.cssimperdibles div[style*="margin: 16px 0"] {
+    margin: 0 !important;
+}
+
+/* What it does: Stops Outlook from adding extra spacing to tables. */
+.cssimperdibles table,
+.cssimperdibles td {
+    mso-table-lspace: 0pt !important;
+    mso-table-rspace: 0pt !important;
+}
+
+/* What it does: Fixes webkit padding issue. */
+.cssimperdibles table {
+    border-spacing: 0 !important;
+    border-collapse: collapse !important;
+    table-layout: fixed !important;
+    margin: 0 auto !important;
+}
+
+/* What it does: Uses a better rendering method when resizing images in IE. */
+.cssimperdibles img {
+    -ms-interpolation-mode:bicubic;
+}
+
+/* What it does: Prevents Windows 10 Mail from underlining links despite inline CSS. Styles for underlined links should be inline. */
+.cssimperdibles a {
+    text-decoration: none;
+}
+
+/* What it does: A work-around for email clients meddling in triggered links. */
+*[x-apple-data-detectors],  /* iOS */
+.cssimperdibles .unstyle-auto-detected-links *,
+.cssimperdibles .aBn {
+    border-bottom: 0 !important;
+    cursor: default !important;
+    color: inherit !important;
+    text-decoration: none !important;
+    font-size: inherit !important;
+    font-family: inherit !important;
+    font-weight: inherit !important;
+    line-height: inherit !important;
+}
+
+/* What it does: Prevents Gmail from displaying a download button on large, non-linked images. */
+.cssimperdibles .a6S {
+    display: none !important;
+    opacity: 0.01 !important;
+}
+
+/* What it does: Prevents Gmail from changing the text color in conversation threads. */
+.cssimperdibles .im {
+    color: inherit !important;
+}
+
+/* If the above doesn't work, add a .g-img class to any image in question. */
+.cssimperdibles img.g-img + div {
+    display: none !important;
+}
+
+/* What it does: Removes right gutter in Gmail iOS app: https://github.com/TedGoas/Cerberus/issues/89  */
+/* Create one of these media queries for each additional viewport size you'd like to fix */
+
+/* iPhone 4, 4S, 5, 5S, 5C, and 5SE */
+@media only screen and (min-device-width: 320px) and (max-device-width: 374px) {
+    .cssimperdibles u ~ div .email-container {
+        min-width: 320px !important;
+    }
+}
+/* iPhone 6, 6S, 7, 8, and X */
+@media only screen and (min-device-width: 375px) and (max-device-width: 413px) {
+    .cssimperdibles u ~ div .email-container {
+        min-width: 375px !important;
+    }
+}
+/* iPhone 6+, 7+, and 8+ */
+@media only screen and (min-device-width: 414px) {
+    .cssimperdibles u ~ div .email-container {
+        min-width: 414px !important;
+    }
+}
+
+
+    </style>
+
+    <!-- CSS Reset : END -->
+
+    <!-- Progressive Enhancements : BEGIN -->
+    <style>
+
+.cssimperdibles  .primary{
+	background: #e8b43e;
+}
+.cssimperdibles .cssimperdibles .bg_white{
+	background: #ffffff;
+}
+.cssimperdibles .bg_light{
+	background: #fafafa;
+}
+.cssimperdibles .bg_black{
+	background: #5d4294;
+}
+.cssimperdibles .bg_dark{
+	background: rgba(27,11,58,.8);
+}
+.cssimperdibles .email-section{
+	padding:1.5em;
+}
+
+/*BUTTON*/
+.cssimperdibles .btn{
+	padding: 5px 15px;
+	display: inline-block;
+}
+.cssimperdibles .btn.btn-primary{
+	border-radius: 30px;
+	background: #5d4294;
+	color: #ffffff;
+}
+.cssimperdibles .btn.btn-white{
+	border-radius: 30px;
+	background: #ffffff;
+	color: #000000;
+}
+.cssimperdibles .btn.btn-white-outline{
+	border-radius: 30px;
+	background: transparent;
+	border: 1px solid #fff;
+	color: #fff;
+}
+
+.cssimperdibles h1,.cssimperdibles h2,.cssimperdibles h3,.cssimperdibles h4,.cssimperdibles h5,.cssimperdibles h6{
+	font-family: 'Work Sans', sans-serif;
+	margin-top: 0;
+	font-weight: normal;
+	color: rgba(255,255,255,.9);
+}
+
+.cssimperdibles body{
+	font-family: 'Work Sans', sans-serif;
+	font-weight: 400;
+	font-size: 15px;
+	line-height: 1.4;
+	color: rgba(255,255,255,.8);
+}
+
+.cssimperdibles a{
+	color: #5d4294;
+}
+
+.cssimperdibles table{
+}
+/*LOGO*/
+
+.cssimperdibles .logo{
+	margin: 0;
+	display: inline-block;
+	position: absolute;
+	top: 10px;
+	left: 0;
+	right: 0;
+	margin-bottom: 0;
+}
+
+.cssimperdibles .logo a{
+	color: #fff;
+	font-size: 24px;
+	font-weight: 700;
+	text-transform: uppercase;
+	font-family: 'Work Sans', sans-serif;
+	display: inline-block;
+	border: 2px solid #fff;
+	line-height: 1.3;
+	padding: 10px 15px 4px 15px;
+	margin: 0;
+}
+.cssimperdibles .logo h1 a span{
+	line-height: 1;
+}
+
+.cssimperdibles .navigation{
+	padding: 0;
+}
+.cssimperdibles .navigation li{
+	list-style: none;
+	display: inline-block;;
+	margin-left: 5px;
+	font-size: 13px;
+	font-weight: 500;
+}
+.cssimperdibles .navigation li a{
+	color: rgba(0,0,0,.4);
+}
+
+/*HERO*/
+.cssimperdibles .hero{
+	position: relative;
+	z-index: 0;
+}
+
+.cssimperdibles .hero .overlay{
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	content: '';
+	width: 100%;
+	background: #000;
+	z-index: -1;
+	opacity: .3;
+}
+
+.cssimperdibles .hero .text{
+	color: rgba(255,255,255,.9);
+}
+.cssimperdibles .hero .text h2{
+	color: #fff;
+	font-size: 40px;
+	margin-bottom: 20px;
+	font-weight: 300;
+	line-height: 1.3;
+	/*text-transform: uppercase;*/
+}
+.cssimperdibles .hero .text .icon{
+	position: absolute;
+	bottom: -30px;
+	left: 0;
+	right: 0;
+}
+
+
+/*HEADING SECTION*/
+.cssimperdibles .heading-section{
+}
+.cssimperdibles .heading-section h2{
+	color: rgba(255,255,255,.9);
+	font-size: 28px;
+	margin-top: 0;
+	line-height: 1.4;
+	font-weight: 400;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+}
+.cssimperdibles .heading-section .subheading{
+	margin-bottom: 20px !important;
+	display: inline-block;
+	font-size: 13px;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	color: rgba(255,255,255,.4);
+	position: relative;
+}
+.cssimperdibles .heading-section .subheading::after{
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: -5px;
+	content: '';
+	width: 100%;
+	height: 2px;
+	background: #e8b43e;
+	margin: 0 auto;
+}
+.heading-section .subheading::before{
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: -10px;
+	content: '';
+	width: 70%;
+	height: 2px;
+	background: #e8b43e;
+	margin: 0 auto;
+}
+
+.cssimperdibles .heading-section-white{
+	color: rgba(255,255,255,.8);
+}
+.cssimperdibles .heading-section-white h2{
+	font-family: 
+	line-height: 1;
+	padding-bottom: 0;
+}
+.cssimperdibles .cssimperdibles .heading-section-white h2{
+	color: #ffffff;
+}
+.cssimperdibles .heading-section-white .subheading{
+	margin-bottom: 0;
+	display: inline-block;
+	font-size: 13px;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	color: rgba(255,255,255,.4);
+}
+
+
+/*TRAINER*/
+.cssimperdibles .trainer{
+
+}
+.cssimperdibles .trainer h2{
+	margin-bottom: 5px;
+}
+.cssimperdibles .trainer span{
+	text-transform: uppercase;
+	color: rgba(255,255,255,.8);
+}
+
+/*PROGRAM*/
+.cssimperdibles .text-program .price{
+	font-size: 20px;
+	margin-bottom: 0;
+	color: #e8b43e;
+}
+.cssimperdibles .text-program h2{
+	font-size: 18px;
+	margin-bottom: 10px;
+	font-weight: 500;
+}
+.cssimperdibles .text-program p{
+	margin-top: 0;
+}
+
+/*FOOTER*/
+
+.cssimperdibles .footer{
+	color: rgba(255,255,255,.5);
+
+}
+.cssimperdibles .footer .heading{
+	color: #ffffff;
+	font-size: 20px;
+}
+.cssimperdibles .footer ul{
+	margin: 0;
+	padding: 0;
+}
+.cssimperdibles .footer ul li{
+	list-style: none;
+	margin-bottom: 10px;
+}
+.cssimperdibles .footer ul li a{
+	color: rgba(255,255,255,1);
+}
+
+
+@media screen and (max-width: 500px) {
+
+
+}
+
+
+    </style>
+
+
+</head>
+
+<body width="100%" style="margin: 0; padding: 0 !important; mso-line-height-rule: exactly; background-color: #222222;">
+	<center style="width: 100%; background-color: #f1f1f1;">
+    <div style="display: none; font-size: 1px;max-height: 0px; max-width: 0px; opacity: 0; overflow: hidden; mso-hide: all; font-family: sans-serif;">
+      &zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;
+    </div>
+    <div style="max-width: 600px; margin: 0 auto;" class="email-container cssimperdibles ">
+    	<!-- BEGIN BODY -->
+      <table align="center" role="presentation" cellspacing="0" cellpadding="0" border="0" width="600px" style="margin: auto;">
+	      <tr>
+          <td><a href="https://www.culturarecreacionydeporte.gov.co"><img src="Fotos_editadas/imperdibles_cabezote_2022.jpg" alt="actividades artísticas" style="width: 100%; max-width: 600px; height: auto; margin: auto; display: block;"></a></td>
+			  
+	      </tr><!-- end tr -->
+	      <tr>
+          <td class="bg_black email-section" style="text-align:center; padding-top: 1em; padding-bottom: 0em; background-color: #5d4294;">
+          	<div class="heading-section heading-section-white">
+          		<span class="subheading"><font color="white">SEMANA DEL 15 AL 21 DE JULIO</font></span>
+                <p><font color="white">Festival asiático en La Barco, danza mayor, bullerengue en el Museo de Bogotá, Festival de Flamenco, Misión Quynza en Bosa, y muchas más actividades imperdibles. </font><br>
+              </p>
+            	<p><font color="white" size="+2">EN ESCENA</font></p>            	
+          	</div>
+          </td>
+        </tr><!-- end: tr -->
+        
+		  <tr>
+          <td class="bg_dark" style="width: 100%;">
+			  
+			   <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%"></a> 
+          		<tr> 
+          			<td valign="middle" width="50%" bgcolor="#e8b43e">
+                  <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                    <tr> 
+                      <td><a href="https://www.idartes.gov.co/es/agenda/concierto/la-nueva-voz-de-cuba-en-el-gaitan-polifonico"><img src="Fotos_editadas/1.idartes14072022.jpg" alt="hombre cantando frente a un micrófono" style="width: 100%; max-width: 600px; height: auto; margin: auto; display: block;"></a>
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+                <td valign="middle" width="50%" bgcolor=#e8b43e></a>
+                  <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                    <tr>
+                      <td class="trainer" style="text-align: left; padding:25px;"> 
+					    <p><font color="#5d4294" size="4px">25 años del Buena Vista Social Club
+</font></p>
+		          
+				              <p><font color="white">Amantes del son cubano deberán agendarse para este concierto con la nueva voz de Cuba Ibrahim Ferrer Jr, en el  Teatro Jorge Eliécer Gaitán. </font></p>
+						  
+						  <p><a href="https://www.idartes.gov.co/es/agenda/concierto/la-nueva-voz-de-cuba-en-el-gaitan-polifonico" style="color:white" class="btn btn-primary">19 de julio | 7:00 p.m. 
+ </a></p>	
+						  
+			  	
+				              	
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+          	</table>
+			  
+			  
+          	
+			  
+			  
+			  
+			  
+			  <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%"> 
+          		<tr> 
+          			<td valign="middle" width="50%">
+                  <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%"></a>
+                    <tr> 
+						<td valign="middle" width="50%" bgcolor="#e8b43e">
+                  <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                    <tr> 
+                      <td class="trainer" style="text-align: left; padding:30px;">
+						  <p><font color="#5d4294" size="4px">Temporada virtual</font></p>
+				      
+						  
+		              	<p><font color="white">No te pierdas, este sábado 16 de julio, a las 4:00 p.m., la retransmisión de un gran concierto del Quinteto Femenino Filarmónico y obras de Edvard Grieg y compositores colombianos como Adolfo Mejía. 
+ </a></p>	
+				
+					<p><a href="https://espaciofilarmonico.gov.co/" style="color:white" class="btn btn-primary">Espacio Filarmónico
+ </a></p>		  	
+				              	
+                      </td>
+                     
+                    </tr>
+                  </table>
+                </td>
+                
+					 <td bgcolor="#e8b43e"><a href="https://espaciofilarmonico.gov.co/"><img src="Fotos_editadas/2.ofb14072022.jpg" alt="tres mujeres de pie tocando insrumentos musicales" style="width: 100%; max-width: 600px; height: auto; margin: auto; display: block;"></a>
+                      </td>
+					
+					
+					
+					
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+          	</table>
+			  
+			 
+			  
+			  
+			  
+			  
+		<table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%"> 
+          		<tr>
+          			<td valign="middle" width="50%" bgcolor="#e8b43e">
+                  <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                    <tr>
+                      <td><img src="Fotos_editadas/3.fuga14072022.jpg" alt="imagen de una mujer y un hombre" style="width: 100%; max-width: 600px; height: auto; margin: auto; display: block; ">
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+                <td valign="middle" width="50%" bgcolor=#e8b43e>
+                  <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                    <tr>
+                      <td class="trainer" style="text-align: left; padding:25px; background-color:#e8b43e">
+						  <p><font color="#5d4294" size="4px">Voces de antaño en la FUGA</font></p>
+				              	
+				              	<p><font color="white">El sábado 16 de julio, a las 11:00 a.m., en la FUGA, se presentan dos reconocidas voces colombianas: Víctor Hugo Suárez, el comunero cantor, y Marinella, la caramelosa. Cumbias, baladas, música andina, y mucho más.
+	</p>
+		
+								
+									
+									
+ </a></p>	
+				              	
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+          	</table>
+			  
+			  
+			  
+			  
+			  
+			  
+			  
+			  
+			  
+          </td>
+        </tr><!-- end: tr -->
+        
+		  
+		  
+		  <tr>
+          <td class="bg_black" style="text-align:center; padding: 2.5em 0 0 0;background-color: #5d4294;"> 
+          	<div class="heading-section heading-section-white"> <a name="idpc"></a>
+          		<span class="subheading"><font color="white">INSTITUTO DISTRITAL DE PATRIMONIO CULTURAL</font></span>
+            	<p><font color="white" size="+2">IDPC</font></p>
+          	</div>
+          	<table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+          		<tr>
+                <td width="50%">
+                  <div class="project-entry"> <a href="https://docs.google.com/forms/d/e/1FAIpQLSdfEbQ3gtje9i62r1u1efO-mR5t9NgqqF4jTqDHhfZsZjo7Hg/viewform"><img src="Fotos_editadas/4.idpc14072022.jpg" alt="ilustración de personas tocando instrumentos"></a>
+                  </div>
+                </td>
+                <td width="50%">
+                  <div class="project-entry"> <a href="https://docs.google.com/forms/d/e/1FAIpQLSdfEbQ3gtje9i62r1u1efO-mR5t9NgqqF4jTqDHhfZsZjo7Hg/viewform"><img src="Fotos_editadas/4a.idpc14072022.jpg" alt="Bullerengue y tamboras en el Museo de Bogotá.Te invitamos, este 16 de julio de 10:00 a.m. a 4:00 p.m., a reflexionar y reconstruir la historia de las ruedas en Bogotá por medio de la palabra, las experiencias y los ritmos de músicos.Botón inscríbete"></a>
+                  </div>
+                </td>
+              </tr>
+          	</table>
+          	<table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%"> 
+          		<tr>
+                <td width="50%"></a>
+                  <div class="project-entry"> <a href="https://idpc.gov.co/eventos/mision-quynza-bosa"><strong><img src="Fotos_editadas/5a.idpc14072022.jpg" alt="Taller 'Cuentos y cantos del calendario ancestral'. ¡La Misión Quynza ha aterrizado a Bosa! Acompáñanos este domingo, 17 de julio desde las 10:00 a.m. en la Plaza Fundacional de Bosa para conocer sobre astronomía y saberes populares.Botón más información
+" style="width: 100%; max-width: 300px; height: auto; margin: auto; display: block;"></strong></a>
+                  </div>
+                </td>
+                <td width="50%">
+                  <div class="project-entry"> <a href="https://idpc.gov.co/eventos/mision-quynza-bosa"><img src="Fotos_editadas/5.idpc14072022.jpg" alt="ilustración del planeta tierra"  style="width: 100%; max-width: 300px; height: auto; margin: auto; display: block;"></a>
+                  </div>
+                </td>
+              </tr>
+          	</table>
+          </td>
+        </tr><!-- end: tr -->
+	     
+		  
+		  <tr>
+	        <td class="bg_dark email-section" style= "background-color: #46395e">
+	        	<div class="heading-section" style="text-align: center;  padding: 2.5em 0 0 0;">
+	        		<span class="subheading"><font color="white">PARTICIPA</font></span>
+	          	<p><font color="white" size="+2">TODOS SOMOS CREADORES</font></p>
+	        	</div>
+	        	<table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+					
+					
+					
+	        		
+					
+              </tr>
+					
+					
+					
+					
+					<tr>
+          			<td style="padding-bottom: 30px;">
+          				<table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+          					          
+		                
+			              	
+				              	
+							
+		                  </div>
+		                </td>
+          				</table>
+          			</td>
+              </tr>
+
+ 
+ <tr>
+          			<td style="padding-bottom: 30px;"> </a> <strong></strong>
+          				<table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%"><a name="biblored"></a>
+							
+							                <td valign="middle" width="50%"><a href="https://www.biblored.gov.co/noticias/asian-saturday-virgilio-barco"><img src="Fotos_editadas/6.biblored14072022.jpg" alt="ilustración de un dragón" style="width: 100%; max-width: 600px; height: auto; margin: auto; display: block;"></a>
+		                                  </td>
+		                <td valign="middle" width="50%">
+		                  <div class="text-program" style="text-align: left; padding-left:25px;">
+		                  	<span class="price"><font color="#e8b43e">Disfruta el Asian Saturday Fest en La Barco</font></span>
+				            
+			              	<p><font color="white">El Festival reúne, de manera gratuita, presentaciones de K-pop Dance, conciertos de música K-pop y Anime, exhibiciones y teatro cosplay, además de un conversatorio sobre los fenómenos culturales asiáticos que han impactado la cultura latinoamericana.</font> </p>
+							  
+							   <p><a href="https://www.biblored.gov.co/noticias/asian-saturday-virgilio-barco" style="color:white" class="btn btn-primary">16 de julio</a></p>
+								
+				              	
+		                  </div>
+		                </td>
+          					                  
+          				</table>
+          			</td>
+              </tr>		
+
+              <tr>
+          			<td style="padding-bottom: 30px;"> </a>
+          				<table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+							
+							              <td valign="middle" width="50%"><a href="https://www.idartes.gov.co/es/noticias/cinco-agrupaciones-hacen-honor-la-danza-mayor-en-bogota"><img src="Fotos_editadas/7.idartes14072022.jpg" alt="grupo de danza de mujeres y hombres mirando a la cámara" style="width: 100%; max-width: 600px; height: auto; margin: auto; display: block;"></a>
+		                                  </td>
+		                <td valign="middle" width="50%"><a name="idartes"></a>
+		                  <div class="text-program" style="text-align: left; padding-left:25px;">
+		                  	<span class="price"><font color="#e8b43e">Gala Danza Mayor</font></span>
+				            
+			              	<p><font color="white">Sol Resplandeciente, Alma Folclórica, Nuevo Amanecer, Otoño Alegre y Qüetz, son las agrupaciones de personas mayores bogotanas que estarán presentes este 17 de julio en el Teatro Mayor Julio Mario Santo Domingo.
+</font> </p>
+							  
+							   <p><a href="https://www.idartes.gov.co/es/noticias/cinco-agrupaciones-hacen-honor-la-danza-mayor-en-bogota" style="color:white" class="btn btn-primary">Más información</a></p>
+								
+				              	
+		                  </div>
+		                </td>
+          					                  
+          				</table>
+          			</td>
+              </tr>		
+					
+							<tr>
+          			<td style="padding-bottom: 30px;">
+          				<table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+          					                  <td valign="middle" width="50%"><a href="https://www.youtube.com/c/FrenteAlEspejoCol"><img src="Fotos_editadas/8.capital14072022.jpg" alt="hombre sentado escribiendo en un computador" style="width: 100%; max-width: 600px; height: auto; margin: auto; display: block;"></a>
+		                                      </td>
+		                <td valign="middle" width="50%">
+		                  <div class="text-program" style="text-align: left; padding-left:25px;">
+		                  	<span class="price"><font color="#e8b43e">Frente al espejo</font></span>
+			              
+			              	<p><font color="white">Llega el final de ‘Frente al espejo’, Santiago Alarcón mira con nuevos ojos lo que pasó en el conflicto armado en Colombia.</font></p>
+							  
+							    <p><a href="https://www.youtube.com/c/FrenteAlEspejoCol" style="color:white" class="btn btn-primary">17 de julio | 8:30 p.m.</a></p>
+								
+							  
+								
+								
+				              	
+		                  </div>
+		                </td>
+          				</table>
+          			</td>
+              </tr>
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					<tr>
+          			<td style="padding-bottom: 30px;">
+          				<table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+          					              <td valign="middle" width="50%"><a href="https://conexioncapital.co/eureka-tu-canal/"><img src="Fotos_editadas/9.eureka14072022.jpg" alt="Niño tocando un instrumento" style="width: 100%; max-width: 600px; height: auto; margin: auto; display: block;"></a>
+		                                  </td>
+		                <td valign="middle" width="50%">
+		                  <div class="text-program" style="text-align: left; padding-left:25px;">
+		                  	<span class="price"><font color="#e8b43e">Sueños Latinoamericanos</font></span>
+			              
+			               <p><font color="white">Esta serie busca destacar la diversidad cultural y las distintas realidades del continente latinoamericano desde la visión de los niños. 12:00 m. - 2:00 p.m. - 4:00 p.m.</font></p>
+							  
+						   
+				             
+							  <p><a href="https://conexioncapital.co/eureka-tu-canal/l" style="color:white" class="btn btn-primary">Lunes a viernes</a></p>
+							  
+							
+		                  </div>
+		                </td>
+          				</table>
+          			</td>
+              </tr>
+					
+					
+			<tr>
+          			<td style="padding-bottom: 30px;">
+          				<table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+          					                        <td valign="middle" width="50%"><a href="https://www.biblored.gov.co/noticias/obra-antigonas-mujeres"><img src="Fotos_editadas/10.biblored14072022.jpg" alt="mujer actuando en un escenario" style="width: 100%; max-width: 600px; height: auto; margin: auto; display: block;"></a>
+		                                        </td>
+		                <td valign="middle" width="50%">
+		                  <div class="text-program" style="text-align: left; padding-left:25px;">
+		                  	<span class="price"><font color="#e8b43e">Antígonas Tribunal de Mujeres</font></span>
+			              
+			              	<p><font color="white">Por primera vez llega a la escena de Artistas en Red, esta obra que sitúa los relatos y la tenacidad de estas mujeres en el mito de Antígona. Se presentará en la Biblioteca Pública de Suba Francisco José de Caldas.</font></p>
+								 <p><a href="https://www.biblored.gov.co/noticias/obra-antigonas-mujeres" style="color:white" class="btn btn-primary">Consulta la programación</a></p>
+								
+				              	<p> </p>
+		                  </div>
+		                </td>
+          				</table>
+          			</td>
+              </tr>	
+			
+		<tr>
+          		<tr>
+          			<td style="padding-bottom: 30px;">
+          				<table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+          					                              <td valign="middle" width="50%"><a href="https://fuga.gov.co/agenda"><img src="Fotos_editadas/11.fuga14072022.jpg" alt="foto a una escultura de una persona" style="width: 100%; max-width: 600px; height: auto; margin: auto; display: block;"></a>
+		                                        </td>
+		                <td valign="middle" width="50%">
+		                  <div class="text-program" style="text-align: left; padding-left:25px;">  
+		                  	<span class="price"><font color="#e8b43e">Charlas de arte</font></span>
+			              
+			              	<p><font color="white">En el marco de la exposición del VII Salón de Arte Popular, regional Cundinamarca y Boyacá, que se exhibe en la FUGA, se realizará la conferencia “Saber ver", con el crítico y curador de arte Eduardo Serrano, quien hablará sobre Nereo López Meza, destacado fotógrafo. </font></p>
+								 <p><a href="https://fuga.gov.co/agenda" style="color:white" class="btn btn-primary">21 de julio | 5:30 p.m.</a></p>
+								
+				              	<p> </p>
+		                  </div>
+		                </td>
+          				</table>
+          			</td>
+              </tr>		
+
+		
+              </tr>			
+				
+
+	<tr>
+          			
+              </tr>							
+				
+
+			
+					
+					
+					
+					
+					
+					
+          	</table>	
+		<tr>
+		
+          
+              </tr>
+		  <tr>
+			
+          
+        </tr><!-- end: tr -->
+				<tr>
+														
+	        <td class="bg_dark email-section" style= "background-color: #46395e">
+	        <div class="heading-section" style="text-align: center; margin-top: -5px;" >
+	        			          	<p><font color="white" size="+2">MOVIDA LOCAL</font></p>
+	        	</div>
+		  
+		  <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%"> 
+	        		
+			  
+			  
+			  
+			  	<tr>
+          			<td style="padding-bottom: 0px;">
+          				
+						
+						<p></p>
+						<p></p>
+						
+						
+          			</td>
+              </tr>
+				
+			  <tr>
+          			<td style="padding-bottom: 0px;">
+          				<table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+          					                    <td valign="middle" width="50%"><a href="https://www.culturarecreacionydeporte.gov.co/es/localidades/barrios-unidos/evento-agendate-con-el-festival-flamenco-de-bogota-claramarroquin"><img src="Fotos_editadas/12.ml14072022.jpg" alt="ilustración del rostro de una mujer flamenca" style="width: 100%; max-width: 600px; height: auto; margin: auto; display: block;"></a>
+		                                        </td>
+		                <td valign="middle" width="50%">
+		                  <div class="text-program" style="text-align: left; padding-left:25px;">
+		                  	<span class="price"> <font color="#e8b43e">Festival Flamenco de Bogotá
+</font></span>
+				              		
+			              	<p> <font color="white">Una iniciativa que reúne cerca de 30 artistas profesionales de la escena local e internacional en diferentes escenarios.</font></p>
+							  
+							  <p><a href="https://www.culturarecreacionydeporte.gov.co/es/localidades/barrios-unidos/evento-agendate-con-el-festival-flamenco-de-bogota-claramarroquin" style="color:white" class="btn btn-primary">Más información</a></p>
+							  
+							  	
+		                  </div>
+		                </td>
+						</table>
+						
+						<p></p>
+						<p></p>
+						
+						
+          			</td>
+              </tr>
+				
+			  
+			  <tr>
+          			<td style="padding-bottom: 0px;">
+          				<table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+          					                        <td valign="middle" width="50%"><a href="https://www.culturarecreacionydeporte.gov.co/es/localidades/la-candelaria/evento-reconstruccion-historica-en-la-casa-museo-quinta-de-bolivar-claramarroquin"><img src="Fotos_editadas/13.ml14072022.jpg" alt="imagen de la quinta de bolivar de Bogotá" style="width: 100%; max-width: 600px; height: auto; margin: auto; display: block;"></a>
+		                                            </td>
+		                <td valign="middle" width="50%">
+		                  <div class="text-program" style="text-align: left; padding-left:25px;"> 
+		                  	<span class="price"> <font color="#e8b43e">Reconstrucción Histórica en la Casa Museo Quinta de Bolívar
+</font></span>
+				              		
+			              	<p> <font color="white">Revivamos juntos el nacimiento del Libertador en la quinta que habitaba, con el recorrido presencial "Simón: el hombre detrás del Libertador", además de música en vivo y talleres de baile. </font></p>
+							  
+							   <p><a href="https://www.culturarecreacionydeporte.gov.co/es/localidades/la-candelaria/evento-reconstruccion-historica-en-la-casa-museo-quinta-de-bolivar-claramarroquin" style="color:white" class="btn btn-primary">24 de julio | 10:00 a.m.</a></p>
+							  
+							 
+				              	
+		                  </div>
+		                </td>
+						</table>
+						
+						<p></p>
+						<p></p>
+						
+						
+          			</td>
+              </tr>
+				<tr>
+														
+	        <td class="bg_dark email-section" style= "background-color: #46395e">
+	        <div class="heading-section" style="text-align: center; margin-top: -5px;" >
+	        			          	<p><font color="white" size="+2">AGENDA CIUDAD</font></p>
+	        	</div>
+		  
+		  <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+	        		
+			  
+			  
+			  
+			  	<tr> 
+          			<td style="padding-bottom: 0px;"><a name="agendaciudad"></a>
+          				<table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%"> 
+          					            <td valign="middle" width="50%"><a href="https://www.teatromayor.org/es/evento/familia/concurso-de-creacion-infantil-5142?function=2667"><img src="Fotos_editadas/14.ac14072022.jpg" alt="Dos personas actuando" style="width: 100%; max-width: 600px; height: auto; margin: auto; display: block;"></a>
+		                    </td>
+		                <td valign="middle" width="50%">
+		                  <div class="text-program" style="text-align: left; padding-left:25px;">
+		                  	<span class="price"> <font color="#e8b43e">‘Re-sonando por el planeta’
+</font></span>
+				              		
+			              	<p> <font color="white">El 16 Y 17 de julio, el Teatro Estudio del Teatro Mayor Julio Mario Santo Domingo, recibirá una obra que a través de la música y de una divertida historia, busca generar una conversación sobre el cuidado del medioambiente con el público infantil y sus familias.  
+ </font></p>
+				              	<p><a href="https://www.teatromayor.org/es/evento/familia/concurso-de-creacion-infantil-5142?function=2667"style="color:white"  class="btn btn-primary">Más información</a></p>
+		                  </div>
+		                </td>
+						</table>
+						
+						<p></p>
+						<p></p>
+						
+						
+          			</td>
+              </tr>
+			  
+	
+		  
+			  
+			  
+			  		
+			  
+			 
+					
+					
+					
+          
+		  		</td>	
+              </tr>
+				
+				
+		  
+      </table>
+		  
+		  
+		    
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+      <table align="center" role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="margin: auto;background-color: #5d4294">
+        <tr>
+        	<td valign="middle" class="bg_black footer email-section"><table width="80%" border="0">
+        	  <tbody>
+        	    <tr>
+        	      <td align="center" valign="middle"><a href="https://www.culturarecreacionydeporte.gov.co/"><img src="Fotos_editadas/logobogscrd.png" width="340" height="41" alt="logo de la bogotá que estamos construyendo y de la Secretaría de Cultura, Recreación y Deporte"/></a></td>
+      	      </tr>
+        	
+        	    <tr>
+        	      <td align="center" valign="middle"><p><a href="https://docs.google.com/forms/d/e/1FAIpQLSdPwxRx6IG5UQNAkkpbUnAj1j1WRQvUE7nGyjahd_u4Z52yZw/viewform" style="color: rgba(255,255,255,.4);">Suscríbete al boletín IMPERDIBLES aquí</a><a href="#" style="color: rgba(255,255,255,.4);"></a></p></td>
+      	      </tr>
+      	    </tbody>
+      	  </table></td>
+        </tr>
+      </table>
+
+    </div>
+  </center>
+
+</body>
+</html>
